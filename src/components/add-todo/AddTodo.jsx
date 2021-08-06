@@ -3,16 +3,19 @@ import './AddTodo.css'
 
 export default function AddTodo(props) {
   // State
-  const [add,setAdd] = useState({ display: "none" })
+  const [add,setAdd] = useState({ display: "none" });
   // Vars
   const todoContent = document.getElementById("todoContent");
   // Methods
+  const setId = ()=> Math.floor(Math.random() * 999999999);
+
   const showAddButton = (e)=>{
-    setAdd({display:"block"})
-    if ( e.target.value === "") setAdd({ display: "none" })
+    setAdd({display:"block"});
+    if ( e.target.value === "") setAdd({ display: "none" });
   }
+
   const addTodo = ()=>{
-    let newTodos = [...props.prevTodos,{content:todoContent.value,id:props.prevTodos.length}];
+    let newTodos = [...props.prevTodos,{content:todoContent.value,id:setId()}];
     props.add(newTodos);
     setAdd({display:"none"});
     todoContent.value = "";

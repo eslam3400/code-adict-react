@@ -11,7 +11,7 @@ export default function TodoList() {
         <h1 className="tasksListHeader">ToDo List</h1>
         {
           todos.map(todo=>(
-            <Todo key={todo.id} content={todo.content} id={todo.id}/>
+            <Todo key={todo.id} stateControll={setTodos} prevTodos={todos} todo={todo}/>
           ))
         }
         <AddTodo add={setTodos} prevTodos={todos}></AddTodo>
