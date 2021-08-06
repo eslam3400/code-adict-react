@@ -4,7 +4,7 @@ import Todo from '../todo/Todo.jsx';
 import './TodoList.css';
 
 export default function TodoList() {
-  const [todos,setTodos] = useState(localStorage.getItem("todos") || [{content:"ASDsad",id:0}]);
+  const [todos,setTodos] = useState(JSON.parse(localStorage.getItem("todos")) || []);
   return (
     <>
       <div className="tasksList">

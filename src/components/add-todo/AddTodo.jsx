@@ -12,9 +12,11 @@ export default function AddTodo(props) {
     if ( e.target.value === "") setAdd({ display: "none" })
   }
   const addTodo = ()=>{
-    props.add([...props.prevTodos,{content:todoContent.value,id:props.prevTodos.length}])
-    setAdd({display:"none"})
-    todoContent.value = ""
+    let newTodos = [...props.prevTodos,{content:todoContent.value,id:props.prevTodos.length}];
+    props.add(newTodos);
+    setAdd({display:"none"});
+    todoContent.value = "";
+    localStorage.setItem("todos",JSON.stringify(newTodos));
   }
   // View
   return (
