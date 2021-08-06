@@ -1,0 +1,18 @@
+.addTodo {
+  display: flex;
+  align-items: center;
+  font-size: x-large;
+}
+input {
+  font-size: x-large;
+  width: 100%;
+  padding: 2%;
+  border: none;
+}
+input:focus {
+  outline: none;
+  border-bottom: 1px solid gray;
+}
+.addButton {
+  cursor: pointer;
+}

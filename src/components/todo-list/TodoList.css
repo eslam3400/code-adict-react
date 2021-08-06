@@ -1,0 +1,9 @@
+.tasksList {
+  padding: 0% 20%;
+}
+.tasksListHeader {
+  text-align: center;
+}
+.tasksList > .task {
+  margin: 3% 0%;
+}

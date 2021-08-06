@@ -1,0 +1,26 @@
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2% 5%;
+  background-color: antiquewhite;
+  border-radius: 10px;
+}
+
+p {
+  font-size: x-large;
+  max-width: 85%;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding-left: 0;
+  width: 10%;
+}
+
+li {
+  font-size: larger;
+  cursor: pointer;
+}
