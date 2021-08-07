@@ -15,7 +15,7 @@ export default function AddTodo(props) {
   }
 
   const addTodo = ()=>{
-    let newTodos = [...props.prevTodos,{content:todoContent.value,id:setId()}];
+    let newTodos = [...props.prevTodos,{id:setId(),content:todoContent.value,done:false}];
     props.add(newTodos);
     setAdd({display:"none"});
     todoContent.value = "";

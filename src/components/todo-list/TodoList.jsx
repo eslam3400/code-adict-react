@@ -9,11 +9,7 @@ export default function TodoList() {
     <>
       <div className="tasksList">
         <h1 className="tasksListHeader">ToDo List</h1>
-        {
-          todos.map(todo=>(
-            <Todo key={todo.id} stateControll={setTodos} prevTodos={todos} todo={todo}/>
-          ))
-        }
+        {todos.map(todo=> <Todo key={todo.id} stateControll={setTodos} prevTodos={todos} todo={todo}/>)}
         <AddTodo add={setTodos} prevTodos={todos}></AddTodo>
       </div>
     </>
