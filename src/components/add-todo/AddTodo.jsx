@@ -3,30 +3,30 @@ import './AddTodo.css'
 
 export default function AddTodo(props) {
   // State
-  const [add,setAdd] = useState({ display: "none" });
+  const [showAddButton,setShowAddButton] = useState(false);
   // Vars
   const todoContent = document.getElementById("todoContent");
   // Methods
   const setId = ()=> Math.floor(Math.random() * 999999999);
 
-  const showAddButton = (e)=>{
-    setAdd({display:"block"});
-    if ( e.target.value === "") setAdd({ display: "none" });
-  }
+  const addButtonOnChangeHandler = e => e.target.value === "" ? setShowAddButton(false) : setShowAddButton(true);
 
   const addTodo = ()=>{
     let newTodos = [...props.prevTodos,{id:setId(),content:todoContent.value,done:false}];
     props.add(newTodos);
-    setAdd({display:"none"});
+    setShowAddButton(false);
     todoContent.value = "";
     localStorage.setItem("todos",JSON.stringify(newTodos));
   }
+
+  const addTodoOnEnterPress = e => e.key === 'Enter' ? addTodo() : null;
+  
   // View
   return (
-    <div className="addTodo">
+    <section className="addTodo">
       <label htmlFor="addTodo"><i className="fas fa-plus-circle"></i></label>
-      <input type="text" placeholder="Add ToDo" id="todoContent" onChange={showAddButton}/>
-      <i className="fas fa-paper-plane addButton" style={add} onClick={addTodo}></i>
-    </div>
+      <input type="text" placeholder="Add ToDo" id="todoContent" onChange={addButtonOnChangeHandler} onKeyPress={addTodoOnEnterPress}/>
+      <i className="fas fa-paper-plane addButton" style={{ visibility: showAddButton ? "visible" : "hidden" }} onClick={addTodo}></i>
+    </section>
   )
 }

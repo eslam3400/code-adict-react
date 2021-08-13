@@ -1,3 +1,22 @@
 body {
   margin: 0;
 }
+main {
+  display: flex;
+  flex-direction: column;
+}
+.appBody {
+  position: relative;
+  width: 100vw;
+  background-color: aliceblue;
+  height: 92vh;
+}
+.BottomNavbar {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 8vh;
+}

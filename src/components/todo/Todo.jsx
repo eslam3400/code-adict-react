@@ -28,12 +28,12 @@ export default function Todo(props) {
 
   return (
     <div className="task">
+      <i className="fas fa-check" onClick={toggelCheckDone}></i>
       <p id={'content-'+todo.id} style={contentStyle}>{todo.content}</p>
-      <ul>
-        <li onClick={toggelCheckDone}><i className="fas fa-clipboard-check"></i></li>
-        {/* <li><i className="fas fa-edit"></i></li> */}
+      {/* <ul>
+        <li><i className="fas fa-edit"></i></li>
         <li onClick={deleteTodo} id={todo.id}><i className="fas fa-trash-alt"></i></li>
-      </ul>
+      </ul> */}
     </div>
   )
 }

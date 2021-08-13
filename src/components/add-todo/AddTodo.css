@@ -1,11 +1,20 @@
 .addTodo {
+  position: fixed;
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: x-large;
+  bottom: 0;
+  width: 100%;
+  padding: 1.5vh 0;
+}
+label {
+  width: 15%;
+  text-align: center;
 }
 input {
+  width: 70%;
   font-size: x-large;
-  width: 100%;
   padding: 2%;
   border: none;
 }
@@ -14,5 +23,7 @@ input:focus {
   border-bottom: 1px solid gray;
 }
 .addButton {
+  width: 15%;
   cursor: pointer;
+  text-align: center;
 }

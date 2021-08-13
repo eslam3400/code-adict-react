@@ -1,29 +1,15 @@
-.bottomNavbar {
-  position: fixed;
-  bottom: 0;
-  height: 60px;
-  width: 100vw;
-  background-color: aqua;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.bottomNavbar__left,
+.bottomNavbar__right {
+  width: 20%;
 }
-.addTask__container {
-  background-color: white;
-  border-radius: 100%;
-  width: 25vw;
-  height: 11vh;
-  margin-bottom: 8vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.bottomNavbar__center {
+  width: 60%;
+  text-align: center;
 }
-.addTask {
-  background-color: gray;
-  width: 20vw;
-  height: 9vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.addTask i {
+  font-size: xx-large;
+  background-color: aliceblue;
+  padding: 10%;
   border-radius: 100%;
+  margin-bottom: 6vh;
 }
