@@ -1,14 +1,24 @@
-import React , { useState } from 'react';
-import AddTodo from '../add-todo/AddTodo.jsx';
+import React,{useState} from 'react';
 import Todo from '../todo/Todo.jsx';
 import './TodoList.css';
 
-export default function TodoList() {
-  const [todos,setTodos] = useState(JSON.parse(localStorage.getItem("todos")) || []);
+export default function TodoList({tasks,setTasks}) {
+  const [showFinishedTasks, setShowFinishedTasks] = useState(false)
+  const unFinishedTasks = []
+  const finishedTasks = []
+  tasks.forEach(task => {
+    if (task.done) finishedTasks.push(task)
+    else unFinishedTasks.push(task)
+  });
   return (
-    <div className="tasksList">
-      {todos.map(todo=> <Todo key={todo.id} stateControll={setTodos} prevTodos={todos} todo={todo}/>)}
-      {/* <AddTodo add={setTodos} prevTodos={todos}></AddTodo> */}
-    </div>
+    <>
+      <div className="tasksList">
+        {unFinishedTasks.map(task=><Todo key={task.id} tasks={tasks} setTasks={setTasks} task={task}/>)}
+      </div>
+      <div className="tasksList doneTasks">
+        <p className="doneTasksTitle" onClick={e=>setShowFinishedTasks(!showFinishedTasks)}>Finished Tasks: {finishedTasks.length} {showFinishedTasks? <i className="fas fa-caret-up"></i>:<i className="fas fa-caret-down"></i>}</p>
+        {showFinishedTasks ? finishedTasks.map(task=><Todo key={task.id} tasks={tasks} setTasks={setTasks} task={task}/>):null}
+      </div>
+    </>
   )
 }

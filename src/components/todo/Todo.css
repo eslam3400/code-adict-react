@@ -3,7 +3,6 @@
   justify-content: start;
   align-items: center;
   padding: 1.5vh 2vw;
-  background-color: antiquewhite;
   border-radius: 10px;
 }
 p {
@@ -12,6 +11,6 @@ p {
   overflow-wrap: break-word;
   margin: 0;
 }
-.fa-check {
+i {
   padding: 0 3vw;
 }

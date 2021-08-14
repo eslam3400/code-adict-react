@@ -7,3 +7,7 @@
 .tasksList > .task {
   margin: 3% 0%;
 }
+.doneTasksTitle {
+  padding: 3% 1%;
+  cursor: pointer;
+}

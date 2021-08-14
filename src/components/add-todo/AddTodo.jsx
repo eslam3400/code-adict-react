@@ -1,7 +1,7 @@
 import React ,{useState} from 'react'
 import './AddTodo.css'
 
-export default function AddTodo(props) {
+export default function AddTodo({setTasks,showInputHandler}) {
   // State
   const [showAddButton,setShowAddButton] = useState(false);
   // Vars
@@ -12,11 +12,13 @@ export default function AddTodo(props) {
   const addButtonOnChangeHandler = e => e.target.value === "" ? setShowAddButton(false) : setShowAddButton(true);
 
   const addTodo = ()=>{
-    let newTodos = [...props.prevTodos,{id:setId(),content:todoContent.value,done:false}];
-    props.add(newTodos);
+    let prevTasks = JSON.parse(localStorage.getItem("tasks")) || []
+    let newTasks = [...prevTasks,{id:setId(),content:todoContent.value,done:false}];
+    setTasks(newTasks);
     setShowAddButton(false);
     todoContent.value = "";
-    localStorage.setItem("todos",JSON.stringify(newTodos));
+    localStorage.setItem("tasks",JSON.stringify(newTasks));
+    showInputHandler(false)
   }
 
   const addTodoOnEnterPress = e => e.key === 'Enter' ? addTodo() : null;
@@ -25,7 +27,7 @@ export default function AddTodo(props) {
   return (
     <section className="addTodo">
       <label htmlFor="addTodo"><i className="fas fa-plus-circle"></i></label>
-      <input type="text" placeholder="Add ToDo" id="todoContent" onChange={addButtonOnChangeHandler} onKeyPress={addTodoOnEnterPress}/>
+      <input autoFocus type="text" placeholder="Add ToDo" id="todoContent" onChange={addButtonOnChangeHandler} onKeyPress={addTodoOnEnterPress}/>
       <i className="fas fa-paper-plane addButton" style={{ visibility: showAddButton ? "visible" : "hidden" }} onClick={addTodo}></i>
     </section>
   )

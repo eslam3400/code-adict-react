@@ -7,17 +7,18 @@ import Header from './components/header/Header';
 import TodoList from './components/todo-list/TodoList';
 
 export default function App() {
-  const [addingNewTask, setAddingNewTask] = useState(false)
+  const [showAddingNewTaskInput, setShowAddingNewTaskInput] = useState(false)
+  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem("tasks")) || [])
 
   return (
     <main>
-      <div className="appBody" onClick={e => setAddingNewTask(false)}>
-        {addingNewTask ? <FadedBackground /> : null}
+      <div className="appBody" onClick={e => setShowAddingNewTaskInput(false)}>
+        {showAddingNewTaskInput ? <FadedBackground /> : null}
         <Header />
-        <TodoList />
+        <TodoList tasks={tasks} setTasks={setTasks} />
       </div>
-      <div className="BottomNavbar" style={{ backgroundColor: addingNewTask ? "white" : 'black' }}>
-        {addingNewTask ? <AddTodo /> : <BottomNavbar adding={addingNewTask} addingHandler={setAddingNewTask} />}
+      <div className="BottomNavbar" style={{ backgroundColor: showAddingNewTaskInput ? "white" : 'black' }}>
+        {showAddingNewTaskInput ? <AddTodo setTasks={setTasks} showInputHandler={setShowAddingNewTaskInput} /> : <BottomNavbar adding={showAddingNewTaskInput} addingHandler={setShowAddingNewTaskInput} />}
       </div>
     </main>
   )
