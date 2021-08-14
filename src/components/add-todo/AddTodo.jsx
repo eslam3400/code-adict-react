@@ -26,7 +26,7 @@ export default function AddTodo({setTasks,showInputHandler}) {
   // View
   return (
     <section className="addTodo">
-      <label htmlFor="addTodoLabel  "><i className="fas fa-plus-circle"></i></label>
+      <label htmlFor="todoContent"><i className="fas fa-plus-circle"></i></label>
       <input autoFocus type="text" placeholder="Add ToDo" id="todoContent" onChange={addButtonOnChangeHandler} onKeyPress={addTodoOnEnterPress}/>
       <i className="fas fa-paper-plane addButton" style={{ visibility: showAddButton ? "visible" : "hidden" }} onClick={addTodo}></i>
     </section>

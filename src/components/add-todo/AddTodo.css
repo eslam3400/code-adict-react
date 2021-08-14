@@ -8,8 +8,9 @@
   width: 100%;
   padding: 1% 0;
   z-index: 999;
+  background-color: white;
 }
-.addTodoLabel {
+label {
   width: 15%;
   text-align: center;
 }

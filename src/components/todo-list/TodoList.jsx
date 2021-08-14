@@ -19,6 +19,7 @@ export default function TodoList({tasks,setTasks}) {
         <p className="doneTasksTitle" onClick={e=>setShowFinishedTasks(!showFinishedTasks)}>Finished Tasks: {finishedTasks.length} {showFinishedTasks? <i className="fas fa-caret-up"></i>:<i className="fas fa-caret-down"></i>}</p>
         {showFinishedTasks ? finishedTasks.map(task=><Todo key={task.id} tasks={tasks} setTasks={setTasks} task={task}/>):null}
       </div>
+      <div style={{ marginBottom:"15%" }}></div>
     </>
   )
 }
