@@ -2,27 +2,48 @@ body {
   margin: 0;
 }
 main {
-  display: flex;
-  flex-direction: column;
+  background-color: aquamarine;
+}
+.appContainer {
+  position: relative;
 }
 .appBody {
   position: relative;
-  width: 100vw;
+  width: 100%;
   background-color: aliceblue;
-  height: 92vh;
+  height: 100vh;
 }
 .BottomNavbar {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 8vh;
+  width: 100%;
+  height: 8%;
   z-index: 99;
 }
-@media (max-width: 767.98px) {
-  .BottomNavbar {
-    height: 10vh;
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .appContainer {
+    width: 60%;
+    margin: auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .appContainer {
+    width: 50%;
+    margin: auto;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .appContainer {
+    width: 40%;
+    margin: auto;
+  }
+}
+@media (min-width: 1200px) {
+  .appContainer {
+    width: 30%;
+    margin: auto;
   }
 }

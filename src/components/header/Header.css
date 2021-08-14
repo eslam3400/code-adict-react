@@ -2,12 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1vh 8vw;
+  padding: 1% 8%;
 }
 .header__right {
   background-color: aqua;
-  width: 10vw;
-  height: 5vh;
+  padding: 4.5%;
+  width: 20px;
   display: flex;
   justify-content: center;
   align-items: center;

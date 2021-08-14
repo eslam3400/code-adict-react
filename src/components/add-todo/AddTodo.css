@@ -1,15 +1,15 @@
 .addTodo {
-  position: fixed;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: x-large;
   bottom: 0;
   width: 100%;
-  padding: 1.5vh 0;
+  padding: 1% 0;
   z-index: 999;
 }
-label {
+.addTodoLabel {
   width: 15%;
   text-align: center;
 }
